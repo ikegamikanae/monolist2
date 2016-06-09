@@ -34,7 +34,7 @@
         <h4 class="side-box-title">Wantしたユーザー</h4>
         <div class="side-box-body">
           <% # TODO Wantしたユーザー一覧 %>
-          <% if @item.have_users.any? %>
+          <% if @item.want_users.any? %>
             <div class="want_avatars">
               <% @item.want_users.each do |want_user| %>
                 <%= link_to gravatar_for(want_user, size: 30), want_user %>
