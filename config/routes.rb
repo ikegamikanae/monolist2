@@ -6,12 +6,19 @@ Rails.application.routes.draw do
   get    'login' , to: 'sessions#new'
   post   'login' , to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+  # get    'ranking/have'
+  # get    'ranking/want'
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :ownerships, only: [:create, :destroy]
   resources :items , only: [:new , :show]
+  resources :ranking do
+    collection do
+      get :have, :want
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

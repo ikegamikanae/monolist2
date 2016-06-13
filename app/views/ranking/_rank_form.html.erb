@@ -1,0 +1,21 @@
+<% ranking_array.each do |item| %>
+  <if item[item_data] != nil %>
+    <div class="item-box">
+      <div class="image">
+        <div class="img-wrap">
+          <% if item[item_data].large_image.present? %>
+            <%= image_tag(item[item_data].large_image , alt: item[item_data].title) %>
+          <% else %>
+            <%= image_tag("no-image.png" , alt: item[item_data].title) %>
+          <% end %>
+        </div>
+      </div>
+       <div class="detail">
+        <p class="title">
+          <%= "#{item[ranking]}位 (#{item[count]} user)：" %>
+          <%= item[item_data].title %>
+        </p>
+      </div>
+        <%= render 'items/action' , item: item[item_data] if logged_in? %>
+    </div>
+  <% end %>

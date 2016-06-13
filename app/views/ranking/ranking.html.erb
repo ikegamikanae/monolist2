@@ -1,0 +1,17 @@
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-contents">
+      <h1><%= @title %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <%= render partial: "rank_form" , 
+    locals: { ranking_array: @ranking_array,
+              ranking: @ranking ,
+              count: @count ,
+              item_data: @item_data } %>
+  </div>
+</div>

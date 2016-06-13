@@ -28,6 +28,15 @@
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  Ranking
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Have" , have_ranking_index_path %></li>
+                  <li><%= link_to "Want" , want_ranking_index_path %></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <span class="gravatar">
                     <%= gravatar_for current_user , size: 20 %>
                   </span>
